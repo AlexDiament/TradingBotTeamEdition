@@ -61,10 +61,13 @@ public class urlConnection {
             //Map tsd = new LinkedHashMap(5);
            JSONObject obj_JSONObject = new JSONObject(responseContent.toString());
             JSONObject on2 = obj_JSONObject.getJSONObject("Time Series (Daily)");
+          //  System.out.println(on2.get("2019-01-01"));
+
+
             //String objson = responseContent.toString();
             //JSONObject obj_JSONObject2=new JSONObject();
             //outJSON = obj_JSONObject;
-            System.out.println(on2);
+         //   System.out.println(on2);
             Integer count = 0;
             //obj_JSONObject = (JSONObject) responseContent;
 
@@ -81,11 +84,18 @@ public class urlConnection {
             //JSONObject TSDObj= obj_JSONObject.getJSONObject("Time Series (5min)"); // TSD stands for Time Series (Daily)
 
 
+
+
            for (Integer i = 2; i <= 9; i++) {
                 for (Integer j = 1; j <= 9; j++) {
                     try {
                         JSONObject dateOBJ = on2.getJSONObject("2000-0" + i + "-0" + j + "");
-                        System.out.println(dateOBJ);
+                        System.out.println("Data for: " + "2000-0" + i + "-0" + j + "");
+                        String dateName = ("2000-0" + i + "-0" + j + "").toString();
+                        String low = dateOBJ.get("3. low").toString();
+                        Double lowInt = Double.parseDouble(low);
+                        DateEntry newItem = new DateEntry(dateName,lowInt,lowInt,lowInt,lowInt,lowInt);
+
                     } catch (JSONException e) {
                      //   e.printStackTrace();
                     }

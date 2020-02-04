@@ -9,5 +9,7 @@ public class Main {
         dateParser DataParser = new dateParser();
         urlConnection.connect();
        // tester.test();
+
+        DateEntry.seeEntries();
     }
 }
