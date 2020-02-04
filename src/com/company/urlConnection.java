@@ -103,6 +103,7 @@ public class urlConnection {
 
 
                 //blahh
+               //blahh the sequel
                 //i was thiking a try catch situation
 
             }
