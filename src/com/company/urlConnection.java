@@ -101,6 +101,8 @@ public class urlConnection {
                     }
                 }
 
+
+                //blahh
                 //i was thiking a try catch situation
 
             }
